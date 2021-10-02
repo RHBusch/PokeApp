@@ -21,3 +21,10 @@ let pokemonList=[
   types:['psychic']
 }
 ]
+for (let i=0; i < pokemonList.length; i++)
+{document.write(' '+ pokemonList[i].name+ ' ' + ' type ='+ pokemonList[i].types)};
+
+
+for (let i=0; i < pokemonList.length; i++)
+if (pokemonList[i].types = 'psychic');
+{document.write(' ***That\'s a rare pokemon!***')}
