@@ -14,7 +14,7 @@ let pokemonList=[
 {name:'Goldeen',
   height:0.6,
   types:['water']
-}
+},
 
 {name:'Hypno',
   height:1.6,
