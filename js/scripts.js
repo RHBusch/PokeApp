@@ -1,5 +1,6 @@
+// Establishing array for pokemonList
 let pokemonList=[
-
+//Building a list of multiple pokemon with ordered attributes.
 {name:'Dewgong',
   height: 1.7,
   types:['ice','water']
