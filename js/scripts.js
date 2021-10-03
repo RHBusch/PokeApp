@@ -1,12 +1,4 @@
-<script>
-  //write your code below here
-  //comment out other code blocks if you want to check output of a particular block
-
-
-
-// Establishing array for pokemonList
 let pokemonList=[
-//Building a list of multiple pokemon objects with ordered attributes and key-values).
 {name:'Dewgong',
  height: 1.7,
  types:['ice','water']
@@ -30,17 +22,19 @@ let pokemonList=[
 
 for (let i=0; i < pokemonList.length; i++){
    let heightBigNote = 'Earth trembles... That\'s a BIG      pokemon!';
-   let psychicNote = 'Psychic pokemon are very rare!';
 
    let pokemonName = pokemonList[i].name;
    let pokemonHeight = pokemonList[i].height;
+   let heightText;
+     if(pokemonHeight > 1.6){heightText= '---EARTH TREMBLES, that\'s a big pokemon!'};
    let pokemonTypes = pokemonList[i].types;
-
+   let psychicText;
+     if(pokemonTypes == 'psychic'){psychicText = '---psychic pokemon are very rare!'};
 
      {document.write(` <br><br> Pokemon Name: ${pokemonName}
      <br> Height: ${pokemonHeight}
-     <br> Type(s): ${pokemonTypes}
+     ${heightText || ''}
+     <br> Type(s): ${pokemonTypes} ${psychicText || ''}
      `)
      }
      }
-</script>
