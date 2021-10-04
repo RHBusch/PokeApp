@@ -1,3 +1,4 @@
+//Establishing an array for different types of pokemon
 let pokemonList=[
 {name:'Dewgong',
  height: 1.7,
@@ -20,21 +21,30 @@ let pokemonList=[
 }
 ]
 
+//Creating a loop to scan the pokemon list above and feed data for output.
+/* The code below will scan the array for all items less than the
+length of the array (5 items) starting at 0.
+*/
 for (let i=0; i < pokemonList.length; i++){
-   let heightBigNote = 'Earth trembles... That\'s a BIG      pokemon!';
 
+//Assigning variables for my template literal
    let pokemonName = pokemonList[i].name;
    let pokemonHeight = pokemonList[i].height;
+/*Creating a conditional variable for my template literal heightText and psychic text willd
+depend on the if statements that follow */
    let heightText;
-     if(pokemonHeight > 1.6){heightText= '---EARTH TREMBLES, that\'s a big pokemon!'};
+     if(pokemonHeight > 1.6){heightText= '- EARTH TREMBLES, that\'s a big pokemon!'};
    let pokemonTypes = pokemonList[i].types;
    let psychicText;
-     if(pokemonTypes == 'psychic'){psychicText = '---psychic pokemon are very rare!'};
+     if(pokemonTypes == 'psychic'){psychicText = '- psychic pokemon are very rare!'};
+/* The template literal below substitutes complicated strings for the variables assigned
+above. The `` are very important. 
 
-     {document.write(` <br><br> Pokemon Name: ${pokemonName}
+*/
+     {document.write(`Pokemon Name: ${pokemonName}
      <br> Height: ${pokemonHeight}
      ${heightText || ''}
-     <br> Type(s): ${pokemonTypes} ${psychicText || ''}
+     <br> Type(s): ${pokemonTypes} ${psychicText || ''}<br><br>
      `)
      }
      }
