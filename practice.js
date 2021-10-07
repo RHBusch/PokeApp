@@ -26,3 +26,25 @@ function divide(number1, number2)
 else{return number1/number2}}
 let result4 = divide(10,5)
 console.log(result4)
+
+//practice forEach loop
+
+let array2= ['dog','cat','turkey'];
+
+array2.forEach(function(item,index,array){
+  console.log('Item: ' + item + ' at index: ' + index + ' in the array: ' + array);
+})
+
+//compare for and for each loops:
+
+let foodList = ['tuna', 'cheese', 'salad'];
+
+document.write('<h3>===for LOOP===</h3>');
+for (let i = 0; i < foodList.length; i++) {
+  document.write('<p>' + foodList[i] + '</p>');
+}
+
+document.write('<h3>===forEach LOOP===</h3>');
+foodList.forEach(function (currentItem) {
+  document.write('<p>' + currentItem + '</p>');
+});
