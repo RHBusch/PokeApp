@@ -48,31 +48,9 @@ for (let i=0; i < pokemonList.length; i++){
      }
      }
 
-//Using a foreach loop to iterate over my pokemonList2 array 10/07/21     
+//Using a foreach loop to iterate over my pokemonList2 array 10/07/21
 
-let pokemonList2=[
-{name:'Dewgong',
- height: 1.7,
- types:['ice','water']
-},
-
-{name:'Hitmonlee',
- height:1.5,
- types:['fighting']
-},
-
-{name:'Goldeen',
- height:0.6,
- types:['water']
-},
-
-{name:'Hypno',
- height:1.6,
- types:['psychic']
-}
-];
-
-pokemonList2.forEach(function(getPokemonData)
+pokemonList.forEach(function(getPokemonData)
 {console.log('Name: ' + getPokemonData.name + ', Height: ' + getPokemonData.height
 + ', Type(s): ' + getPokemonData.types)});
 
