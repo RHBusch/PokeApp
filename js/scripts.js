@@ -88,6 +88,10 @@ pokemonRepository.add({name:'Buddy',
 console.log(pokemonRepository.getAll())
 
 // Testing search function
-function searchFor(pokemon){return pokemonName ==='Hitmonlee';
-}
-console.log(pokemonRepository.getAll().find(searchFor));
+// Testing search function
+
+let nameFilter = pokemonRepository.getAll().filter(function(pokemon2){
+  return pokemon2.name == 'Hitmonlee'
+});
+
+console.log(nameFilter);
