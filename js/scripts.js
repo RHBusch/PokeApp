@@ -29,8 +29,14 @@ let pokemonList=[
 //add to add new items to the array in the future
 
 function getAll() {return pokemonList};
-function add(pokemonNewItem){pokemonList.push(pokemonNewItem);
-}
+
+
+function add(pokemonNewItem){
+  if(typeof pokemonNewItem === 'object')
+  pokemonList.push(pokemonNewItem)
+  else{console.log('Can\'t add a non-object')}
+};
+
  return {
     getAll: getAll,
     add: add,
