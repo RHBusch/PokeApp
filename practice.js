@@ -119,3 +119,17 @@ for(let i=0; i < pokemonRepository.getAll(); i++){
 pokemonRepository.getAll.forEach()(function(getPokemonData)
 {console.log('Name: ' + getPokemonData.name + ', Height: ' + getPokemonData.height
 + ', Type(s): ' + getPokemonData.types)})
+
+
+
+
+
+//Practicing conversions and variable setting with javascript.
+//Setting today's temperature to 293 kelvin
+let kelvin = 298
+// celsius is 273 degrees less than kelvin
+let celsius = kelvin - 273
+// running fahrenheit conversion and using the Math.floor object to round down for any decimals
+let fahrenheit = Math.floor(celsius*(9/5) + 32)
+
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
