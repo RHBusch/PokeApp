@@ -131,5 +131,11 @@ let kelvin = 298
 let celsius = kelvin - 273
 // running fahrenheit conversion and using the Math.floor object to round down for any decimals
 let fahrenheit = Math.floor(celsius*(9/5) + 32)
+//Adding newton conversion
+let newton = Math.floor(celsius*(33/100))
+
+let fahrenheit = Math.floor(celsius*(9/5) + 32)
 
 console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
+
+console.log(`The temperature is ${newton} degrees Newton`);
