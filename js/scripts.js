@@ -37,6 +37,17 @@ function add(pokemonNewItem){
   else{console.log('Can\'t add a non-object')}
 };
 
+//confirms any new item being added to the array has a name, height, and types for keys
+
+function checkKeys(pokemonNewItem){
+  if(Object.keys(pokemonNewItem).includes('name') &&
+  Object.keys(pokemonNewItem).includes('height') &&
+  Object.keys(pokemonNewItem).includes('types'))
+  {console.log('Okay to add - Pokemon has all included keys')}
+  else {console.log('Cannot add Pokemon- missing keys')}
+};
+
+
  return {
     getAll: getAll,
     add: add,
