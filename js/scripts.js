@@ -71,19 +71,13 @@ pokemonRepository.getAll().forEach(function(writePokemonData){
      if(pokemonTypes == 'psychic'){psychicText = '- psychic pokemon are very rare!'};
 
 //template literal
-     {document.write(`Pokemon Name: ${pokemonName}
+     {console.log + document.write(`Pokemon Name: ${pokemonName}
      <br> Height: ${pokemonHeight}
      ${heightText || ''}
      <br> Type(s): ${pokemonTypes} ${psychicText || ''}<br><br>
      `)
      }
      })
-
-//Using a foreach loop for data output via console.log
-
-pokemonRepository.getAll().forEach(function(getPokemonData)
-{console.log('Name: ' + getPokemonData.name +', Height: ' + getPokemonData.height
-+ ', Type(s): ' + getPokemonData.types)});
 
 //Adding a fictitious pokemon to test 'add' function
 pokemonRepository.add({name:'Buddy',
