@@ -90,4 +90,10 @@ pokemonRepository.add({name:'Buddy',
  height:0.9,
  types:['land']
 })
+//Confirming the 'add' function works
 console.log(pokemonRepository.getAll())
+
+// Testing search function
+function searchFor(pokemon){return pokemonName ==='Hitmonlee';
+}
+console.log(pokemonRepository.getAll().find(searchFor));
