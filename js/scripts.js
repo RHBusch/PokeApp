@@ -1,3 +1,5 @@
+//Establishing IIFE for pokemonList @ pokemonRepository
+
 let pokemonRepository = (function() {
 
 let pokemonList=[
@@ -22,6 +24,10 @@ let pokemonList=[
 }
 ];
 
+//Establishing two functions:
+//getAll to return all items in the pokemonList
+//add to add new items to the array in the future
+
 function getAll() {return pokemonList};
 function add(pokemonNew){pokemonList.push(pokemonNew);
 }
@@ -32,10 +38,7 @@ function add(pokemonNew){pokemonList.push(pokemonNew);
 
 })();
 
-/*Creating a loop to scan the pokemon list above and feed data for output.
-The code below will scan the array for all items less than the
-length of the array (5 items) starting at 0. */
-
+// Creating a .forEach loop for visual data ouput via document.write
 
 pokemonRepository.getAll().forEach(function(writePokemonData){
 
@@ -59,7 +62,7 @@ pokemonRepository.getAll().forEach(function(writePokemonData){
      }
      })
 
-//Using a foreach loop to iterate over my pokemonList2 array 10/07/21
+//Using a foreach loop for data output via console.log
 
 pokemonRepository.getAll().forEach(function(getPokemonData)
 {console.log('Name: ' + getPokemonData.name +', Height: ' + getPokemonData.height
