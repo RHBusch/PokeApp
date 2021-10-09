@@ -84,3 +84,10 @@ pokemonRepository.getAll().forEach(function(writePokemonData){
 pokemonRepository.getAll().forEach(function(getPokemonData)
 {console.log('Name: ' + getPokemonData.name +', Height: ' + getPokemonData.height
 + ', Type(s): ' + getPokemonData.types)});
+
+//Adding a fictitious pokemon to test 'add' function
+pokemonRepository.add({name:'Buddy',
+ height:0.9,
+ types:['land']
+})
+console.log(pokemonRepository.getAll())
