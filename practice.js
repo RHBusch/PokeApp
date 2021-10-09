@@ -139,3 +139,24 @@ let fahrenheit = Math.floor(celsius*(9/5) + 32)
 console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
 
 console.log(`The temperature is ${newton} degrees Newton`);
+
+
+//setting myAge
+let myAge = 28;
+//setting the first two years of a dog's life
+let earlyYears = 2;
+
+earlyYears *= 10.5;
+//Accounting for early years already
+laterYears = myAge-=2;
+
+laterYears *= 4;
+
+let myAgeInDogYears = laterYears + earlyYears
+
+console.log(myAgeInDogYears);
+
+let myName ='Ross Busch' .toLowerCase();
+
+console.log(`My name is ${myName}
+I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`)
