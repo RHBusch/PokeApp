@@ -29,7 +29,7 @@ let pokemonList=[
 //add to add new items to the array in the future
 
 function getAll() {return pokemonList};
-function add(pokemonNew){pokemonList.push(pokemonNew);
+function add(pokemonNewItem){pokemonList.push(pokemonNewItem);
 }
  return {
     getAll: getAll,
