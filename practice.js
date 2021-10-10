@@ -164,7 +164,7 @@ I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in 
 /*Practicing using the ! operator for (NOT). The code below should return 'not
 bed time yet because although mood was originally set to sleepy and tirednessLevel
 is set to above 8, I've assigned the ! operator making mood NOT sleepy. The statement
-is also and && so both conditions must be true. 
+is also and && so both conditions must be true.
 */
 }, 10);'
 let mood = !'sleepy';
@@ -173,3 +173,15 @@ let tirednessLevel = 9;
 if(mood === 'sleepy' && tirednessLevel > 8){
   console.log('time to sleep');}
 else{console.log('not bed time yet');}
+
+/*  Studying short-ciruit evaluation. If I assign a value to tool, console.log will 
+print that value to the console because a || returns the first truthy value. If I leave
+tool blank, the console will log pen. writingUtensil is the value of tool first, and then
+pen next.
+
+*/
+let tool = 'marker';
+
+let writingUtensil = tool || 'pen';
+
+console.log(`The ${writingUtensil} is mightier than the sword.`);
