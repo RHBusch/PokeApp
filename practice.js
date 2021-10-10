@@ -174,7 +174,7 @@ if(mood === 'sleepy' && tirednessLevel > 8){
   console.log('time to sleep');}
 else{console.log('not bed time yet');}
 
-/*  Studying short-ciruit evaluation. If I assign a value to tool, console.log will 
+/*  Studying short-ciruit evaluation. If I assign a value to tool, console.log will
 print that value to the console because a || returns the first truthy value. If I leave
 tool blank, the console will log pen. writingUtensil is the value of tool first, and then
 pen next.
@@ -185,3 +185,28 @@ let tool = 'marker';
 let writingUtensil = tool || 'pen';
 
 console.log(`The ${writingUtensil} is mightier than the sword.`);
+
+/*Practicing ternary operators
+  variable ? if true action : if false action.
+  Pay attention to where the ? is placed when using a ternary operator
+  for a string
+  */
+let isLocked = false;
+
+isLocked ?
+  console.log('You will need a key to open the door.'):
+  console.log('You will not need a key to open the door.');
+
+
+let isCorrect = true;
+
+isCorrect? console.log('Correct!') :
+
+  console.log('Incorrect!');
+
+
+let favoritePhrase = 'Love That!';
+
+favoritePhrase === 'Love That!'?
+  console.log('I love that!') :
+  console.log("I don't love that!");
