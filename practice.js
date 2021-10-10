@@ -160,3 +160,16 @@ let myName ='Ross Busch' .toLowerCase();
 
 console.log(`My name is ${myName}
 I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`)
+
+/*Practicing using the ! operator for (NOT). The code below should return 'not
+bed time yet because although mood was originally set to sleepy and tirednessLevel
+is set to above 8, I've assigned the ! operator making mood NOT sleepy. The statement
+is also and && so both conditions must be true. 
+*/
+}, 10);'
+let mood = !'sleepy';
+let tirednessLevel = 9;
+
+if(mood === 'sleepy' && tirednessLevel > 8){
+  console.log('time to sleep');}
+else{console.log('not bed time yet');}
