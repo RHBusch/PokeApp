@@ -32,9 +32,9 @@ function getAll() {return pokemonList};
 
 
 function add(pokemonNewItem){
-  if(typeof pokemonNewItem === 'object')
-  pokemonList.push(pokemonNewItem)
-  else{console.log('Can\'t add a non-object')}
+  typeof pokemonNewItem ==='object'?
+  pokemonList.push(pokemonNewItem) :
+  console.log ('Can\'t add a non-object')
 };
 
 //confirms any new item being added to the array has a name, height, and types for keys
