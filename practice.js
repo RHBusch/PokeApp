@@ -187,7 +187,7 @@ let writingUtensil = tool || 'pen';
 console.log(`The ${writingUtensil} is mightier than the sword.`);
 
 /*Practicing ternary operators
-  variable ? if true action : if false action.
+conditional ? action if truthy : action if falsy
   Pay attention to where the ? is placed when using a ternary operator
   for a string
   */
@@ -210,3 +210,36 @@ let favoritePhrase = 'Love That!';
 favoritePhrase === 'Love That!'?
   console.log('I love that!') :
   console.log("I don't love that!");
+
+  // Practicing else if
+  let season = 'summer';
+
+if (season === 'spring'){
+  console.log('It\'s spring! The tress are budding!')
+  } else if(season === 'winter'){
+    console.log('It\'s winter! Everything is covered in snow.')
+    } else if (season === 'fall'){
+      console.log('It\'s fall! Leaves are falling!');
+    } else if (season === 'summer'){
+      console.log('It\'s sunny and warm because it\'s summer!')
+    }
+    {
+      console.log('Invalid season.');
+    }
+//Practicing using switch
+let athleteFinalPosition = 'first place';
+switch (athleteFinalPosition){
+
+case 'first place' :
+  console.log('You get the gold medal!');
+  break;
+case 'second place' :
+  console.log('You get the silver medal!')
+  break;
+case 'third place' :
+  console.log('You get the bronze medal!')
+  break;
+default:
+  console.log ('No medal awarded.')
+  break;
+}
