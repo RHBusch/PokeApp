@@ -22,7 +22,7 @@ let pokemonList=[
  types:['psychic']
 }
 ];
-
+//Code below manipulates DOM creating a new pokemon list for index.html
 function addListItem (pokemon){
   let pokemonListScript = document.querySelector('.pokemonList');
 
