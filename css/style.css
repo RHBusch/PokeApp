@@ -13,3 +13,16 @@ body{
   background-color: #fff;
   padding: 1rem;
 }
+
+.my-poke-button{
+  width: 150px;
+  padding: 16px 32px;
+  margin: 8px 4px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #FFE7AC;
+  color: black;
+  cursor: pointer;
+  -web-kit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
