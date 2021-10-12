@@ -29,9 +29,9 @@ function addListItem (pokemon){
   let listItem = document.createElement('li');
 
   let pokeButton = document.createElement('button');
-  pokeButton.innerText = pokemon.name
+  pokeButton.innerText = pokemon.name;
 
-  pokeButton.classList.add('my-poke-button')
+  pokeButton.classList.add('my-poke-button');
   listItem.appendChild(pokeButton);
   pokemonListScript.appendChild(listItem);
 }
@@ -56,7 +56,7 @@ function checkKeys(pokemonNewItem){
  return {
     getAll: getAll,
     add: add,
-    addListItem: addListItem,
+    addListItem: addListItem
   };
 
 })();
