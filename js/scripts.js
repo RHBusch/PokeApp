@@ -1,4 +1,3 @@
-//Establishing IIFE for pokemonList @ pokemonRepository
 
 let pokemonRepository = (function() {
 
@@ -24,20 +23,27 @@ let pokemonList=[
 }
 ];
 
-//Establishing two functions:
-//getAll to return all items in the pokemonList
-//add to add new items to the array in the future
+function addListItem (pokemon){
+  let pokemonListScript = document.querySelector('.pokemonList');
+
+  let listItem = document.createElement('li');
+
+  let pokeButton = document.createElement('button');
+  pokeButton.innerText = pokemon.name
+
+  pokeButton.classList.add('my-poke-button')
+  listItem.appendChild(pokeButton);
+  pokemonListScript.appendChild(listItem);
+}
 
 function getAll() {return pokemonList};
-
 
 function add(pokemonNewItem){
   typeof pokemonNewItem ==='object'?
   pokemonList.push(pokemonNewItem) :
+
   console.log ('Can\'t add a non-object')
 };
-
-//confirms any new item being added to the array has a name, height, and types for keys
 
 function checkKeys(pokemonNewItem){
   if(Object.keys(pokemonNewItem).includes('name') &&
@@ -47,51 +53,15 @@ function checkKeys(pokemonNewItem){
   else {console.log('Cannot add Pokemon- missing keys')}
 };
 
-
  return {
     getAll: getAll,
     add: add,
+    addListItem: addListItem,
   };
 
 })();
 
-// Creating a .forEach loop for visual data ouput via document.write
 
-pokemonRepository.getAll().forEach(function(writePokemonData){
-
-//Assigning variables for my template literal
-   let pokemonName = writePokemonData.name;
-   let pokemonHeight = writePokemonData.height;
-/*Creating a conditional variable for my template literal heightText and psychic text willd depend on the if statements that follow */
-
-   let heightText;
-     if(pokemonHeight > 1.6){heightText= '- EARTH TREMBLES, that\'s a big pokemon!'};
-   let pokemonTypes = writePokemonData.types;
-   let psychicText;
-     if(pokemonTypes == 'psychic'){psychicText = '- psychic pokemon are very rare!'};
-
-//template literal
-     {console.log + document.write(`Pokemon Name: ${pokemonName}
-     <br> Height: ${pokemonHeight}
-     ${heightText || ''}
-     <br> Type(s): ${pokemonTypes} ${psychicText || ''}<br><br>
-     `)
-     }
-     })
-
-//Adding a fictitious pokemon to test 'add' function
-pokemonRepository.add({name:'Buddy',
- height:0.9,
- types:['land']
-})
-//Confirming the 'add' function works
-console.log(pokemonRepository.getAll())
-
-// Testing search function
-// Testing search function
-
-let nameFilter = pokemonRepository.getAll().filter(function(pokemon2){
-  return pokemon2.name == 'Hitmonlee'
-});
-
-console.log(nameFilter);
+pokemonRepository.getAll().forEach(function (pokemon) {
+ pokemonRepository.addListItem(pokemon);
+  });
