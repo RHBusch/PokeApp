@@ -30,10 +30,16 @@ function addListItem (pokemon){
 
   let pokeButton = document.createElement('button');
   pokeButton.innerText = pokemon.name;
+  pokeButton.addEventListener('click',function(){showDetails(pokemon);
+  });
 
   pokeButton.classList.add('my-poke-button');
   listItem.appendChild(pokeButton);
   pokemonListScript.appendChild(listItem);
+}
+
+function showDetails (pokemon){
+  console.log(pokemon)
 }
 
 function getAll() {return pokemonList};
