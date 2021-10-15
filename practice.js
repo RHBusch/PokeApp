@@ -243,3 +243,23 @@ default:
   console.log ('No medal awarded.')
   break;
 }
+
+//Practicing asynchronous Code
+
+let examplePromise2 = new Promise (function(myResolve, myReject){
+
+  let sum;
+  setTimeout(function(){
+    sum = 3*9;
+    if(sum > 27){
+      myResolve(sum);
+    }
+      else{
+        myReject('The promise is nae good');
+      }
+    },2000);
+});
+
+console.log('waiting');
+examplePromise2.then(function(result){console.log(result)}) .catch(function(error){console.log(error);
+});
