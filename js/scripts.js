@@ -22,10 +22,12 @@ function addListItem (pokemon){
   listItem.appendChild(pokeButton);
 //Adding the UL as the parent of the list.
   pokemonListScript.appendChild(listItem);
+  pokeButton.addEventListener("click", function(event){showDetails(pokemon)})
 }
 /*Creating a function with parameters for pokeButton and pokemon that creates
-an event listener for clicks and then calls the show details function to
+an event listener for clicks and then calls the details function to
 log the pokemon name in the console that was clicked.*/
+
 
   function eventListenerButton (pokeButton, pokemon){
     pokeButton.addEventListener('click',function(){
@@ -35,7 +37,7 @@ log the pokemon name in the console that was clicked.*/
 showDetails as part of a button click.*/
 
 function showDetails (pokemon){
-  console.log(pokemon.name)
+  loadDetails(pokemon).then(function(){console.log(pokemon)})
 }
 //Creating a function that calls the pokemonList.
 function getAll() {return pokemonList};
@@ -71,6 +73,19 @@ function loadList (){
       console.error(e);
     })
       }
+  function loadDetails(item){
+    let url = item.detailsUrl;
+    return fetch(url).then(function(response){
+      return response.json();
+    }).then(function(details){
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height
+      item.types = details.types
+    }).catch(function(e){
+    console.error(e);
+    });
+
+  }
 
 
  return {
@@ -78,9 +93,11 @@ function loadList (){
     add: add,
     addListItem: addListItem,
     eventListenerButton: eventListenerButton,
-    loadList: loadList
-  };
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails,
 
+  };
 })();
 
 //Calling the getAll and addListItem functions in a forEach loop to display the pokemon list.
