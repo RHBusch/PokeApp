@@ -1,32 +1,15 @@
 //Creating IIFE
 let pokemonRepository = (function() {
 //Creating array of Pokemon to iterate over
-let pokemonList=[
-{name:'Dewgong',
- height: 1.7,
- types:['ice','water']
-},
-
-{name:'Hitmonlee',
- height:1.5,
- types:['fighting']
-},
-
-{name:'Goldeen',
- height:0.6,
- types:['water']
-},
-
-{name:'Hypno',
- height:1.6,
- types:['psychic']
-}
-];
+let pokemonList= [];
+let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 //Code below manipulates DOM creating a new pokemon list for index.html
 //Selecting the class pokemonList from the ul in the index.
 function addListItem (pokemon){
   let pokemonListScript = document.querySelector('.pokemonList');
 //Creating a list item as part of the unordered list selected above.
+
+
   let listItem = document.createElement('li');
 //Creating a button for each list item and assigning that button the innerText of the pokemon name.
   let pokeButton = document.createElement('button');
@@ -73,17 +56,35 @@ function checkKeys(pokemonNewItem){
   else {console.log('Cannot add Pokemon- missing keys')}
 };
 //Returning all relevant values for the functions above.
+function loadList (){
+  return fetch(apiUrl).then(function(response){
+    return response.json();
+  }).then (function(json){
+    json.results.forEach (function(item){
+      let pokemon = {
+        name: item.name,
+        detailsUrl: item.url
+      };
+        add(pokemon);
+      });
+    }).catch(function (e){
+      console.error(e);
+    })
+      }
+
+
  return {
     getAll: getAll,
     add: add,
     addListItem: addListItem,
-    eventListenerButton: eventListenerButton
-
+    eventListenerButton: eventListenerButton,
+    loadList: loadList
   };
 
 })();
 
-//Calling the getAll and addListItem functions in a forEach loop to display the pokemon list. 
+//Calling the getAll and addListItem functions in a forEach loop to display the pokemon list.
+pokemonRepository.loadList().then (function(){
 pokemonRepository.getAll().forEach(function (pokemon) {
- pokemonRepository.addListItem(pokemon);
+ pokemonRepository.addListItem(pokemon)});
   });
