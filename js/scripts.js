@@ -30,7 +30,8 @@ function addListItem (pokemon){
 //Adding the UL as the parent of the list.
   pokemonListScript.appendChild(listItem);
   pokeButton.addEventListener("click", function(event){showDetails(pokemon)})
-}
+}//closing addListItem function
+
 /*Creating a function with parameters for pokeButton and pokemon that creates
 an event listener for clicks and then calls the details function to
 log the pokemon name in the console that was clicked.*/
