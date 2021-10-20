@@ -80,9 +80,9 @@ function showDetails (pokemon){
         closeButtonElement.addEventListener ('click', hideModal)
 
       let modalTitle = document.createElement ('h1');
-        modalTitle.innerText = 'NAME TBD';
+        modalTitle.innerText = name;
       let modalDetails = document.createElement ('p');
-        modalDetails.innerText = 'LOREM IPSUM LOREM IPSUM  LOREM IPSUM  LOREM IPSUM  LOREM IPSUM ';
+        modalDetails.innerText = height;
 
       modal.appendChild(closeButtonElement);
       modal.appendChild(modalTitle);
