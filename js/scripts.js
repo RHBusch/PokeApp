@@ -69,7 +69,7 @@ function showDetails (pokemon){
   })};
 
     let modalContainer = document.querySelector('#modal-container');
-    function showModal(name, height){
+    function showModal(name, height, img){
       modalContainer.innerHtml = 'LOREM IPSUM';
       let modal = document.createElement ('div');
       modal.classList.add('modal');
@@ -86,11 +86,12 @@ function showDetails (pokemon){
         modalDetails.innerText = 'height: '+ height;
 
       let pokemonImage = document.createElement('img');
-          pokemonImage.src =''
+          pokemonImage.src = img;
 
       modal.appendChild(closeButtonElement);
       modal.appendChild(modalTitle);
       modal.appendChild(modalDetails);
+      modal.appendChild(pokemonImage);
       modalContainer.appendChild(modal);
       modalContainer.classList.add('is-visible');
     }
