@@ -65,7 +65,8 @@ function loadList (){
   }
 
 function showDetails (pokemon){
-  loadDetails(pokemon).then(function(){showModal(pokemon.name, pokemon.height)
+  loadDetails(pokemon).then(function(){showModal(pokemon.name, pokemon.height,
+  pokemonImage.url)
   })};
 
     let modalContainer = document.querySelector('#modal-container');
