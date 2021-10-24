@@ -57,19 +57,19 @@ function loadList (){
       return response.json();
     }).then(function(details){   //The data the promise will return.
       item.imageUrl = details.sprites.front_default;
-      item.height = details.height
-      item.types = details.types
+      item.height = details.height;
+      item.types = details.types;
     }).catch(function(e){ // indicates what will happen if the promise is rejected
     console.error(e);
     });
   }
 
 function showDetails (pokemon){
-  loadDetails(pokemon).then(function(){showModal(pokemon.name, pokemon.height)
+  loadDetails(pokemon).then(function(){showModal(pokemon)
   })};
 
     let modalContainer = document.querySelector('#modal-container');
-    function showModal(name, height, img){
+    function showModal(pokemon){
       modalContainer.innerHtml = 'LOREM IPSUM';
       let modal = document.createElement ('div');
       modal.classList.add('modal');
@@ -80,13 +80,13 @@ function showDetails (pokemon){
         closeButtonElement.addEventListener ('click', hideModal)
 
       let modalTitle = document.createElement ('h1');
-        modalTitle.innerText = 'Name: ' + name;
+        modalTitle.innerText = 'Name: ' + pokemon.name;
 
       let modalDetails = document.createElement ('p');
-        modalDetails.innerText = 'height: '+ height;
+        modalDetails.innerText = 'height: '+ pokemon.height;
 
-      let pokemonImage = document.createElement('img');
-          pokemonImage.src = img;
+      let pokemonImage = document.createElement ('img');
+          pokemonImage.src = pokemon.imageUrl;
 
       modal.appendChild(closeButtonElement);
       modal.appendChild(modalTitle);
