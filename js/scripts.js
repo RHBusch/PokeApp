@@ -65,8 +65,7 @@ function loadList (){
   }
 
 function showDetails (pokemon){
-  loadDetails(pokemon).then(function(){showModal(pokemon.name, pokemon.height,
-  pokemonImage.url)
+  loadDetails(pokemon).then(function(){showModal(pokemon.name, pokemon.height)
   })};
 
     let modalContainer = document.querySelector('#modal-container');
@@ -112,7 +111,7 @@ function hideModal(){
     if (target === modalContainer){hideModal()};
   })
  document.querySelector('pokeButton').addEventListener('click',() =>{
-    showModal (pokemon.name, pokemon.height)
+    showModal (pokemon.name, pokemon.height, pokemon.img)
   })
 
 }
