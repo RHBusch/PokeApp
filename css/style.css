@@ -66,10 +66,20 @@ body{
   text-decoration: underline;
 }
 
-.modal h1 {
+.modal h2 {
   margin-top: 0;
+  text-align: center;
 }
 
-.modal p {
+.modal h3 {
   margin-bottom: 0;
+  text-align: center;
+}
+
+.pokemonImage {
+  height: 200px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
 }
