@@ -77,7 +77,7 @@ function showDetails (pokemon){
       let closeButtonElement = document.createElement('button');
         closeButtonElement.innerText ='Close';
         closeButtonElement.classList.add('modal-close');
-        closeButtonElement.addEventListener ('click', hideModal)
+        closeButtonElement.addEventListener ('click',hideModal)
 
       let modalTitle = document.createElement ('h2');
         modalTitle.innerText = 'Name: ' + pokemon.name;
@@ -99,7 +99,6 @@ function showDetails (pokemon){
 
 function hideModal(){
     modalContainer.classList.remove('is-visible');
-
 
   window.addEventListener('keydown', (e) => {
     if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
