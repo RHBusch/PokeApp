@@ -98,23 +98,20 @@ function showDetails (pokemon){
     }
 
 function hideModal(){
-    modalContainer.classList.remove('is-visible');
-
-  window.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
-      hideModal();
-    }
-    }) //Closing addEventListener
-
-  modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer){hideModal()};
-  })
- document.querySelector('pokeButton').addEventListener('click',() =>{
-    showModal (pokemon.name, pokemon.height, pokemon.img)
-  })
-
+    modalContainer.classList.remove('is-visible')
 }
+window.addEventListener("keydown", e => {
+   if (e.key === "Escape" && modalContainer.classList.contains('is-visible')) {
+     hideModal();
+   }
+ }); //Closing addEventListener
+
+ modalContainer.addEventListener("click", e => {
+   let target = e.target;
+   if (target === modalContainer) {
+     hideModal();
+   }
+ });
 
 //Creating a function that calls the pokemonList.
 function getAll() {return pokemonList};
