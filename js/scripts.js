@@ -13,18 +13,19 @@ function addListItem (pokemon){
 
 //Creating a list item as part of the unordered list selected above.
   let listItem = document.createElement('li');
-  listItem.classList.add('list-group-item');
+  listItem.classList.add('list-group-item');//Using JS to add this Bootstrap class
 
 //Creating a button for each list item and assigning that button the innerText of the pokemon name.
   let pokeButton =
   document.createElement('button');
   pokeButton.innerText = pokemon.name;
+  pokeButton.classList.add('btn-outline-dark');
 
 //Calling the eventListenerButton function to add an event listener for button clicks.
   eventListenerButton(pokeButton, pokemon)
 
 //Creating a CSS class for the button referenced above to add styling.
-  pokeButton.classList.add('my-poke-button');
+//  pokeButton.classList.add('my-poke-button');
 
 //Adding the ListItem as the parent of the pokeButton.
   listItem.appendChild(pokeButton);
