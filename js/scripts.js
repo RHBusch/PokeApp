@@ -19,7 +19,9 @@ function addListItem (pokemon){
   let pokeButton =
   document.createElement('button');
   pokeButton.innerText = pokemon.name;
-  pokeButton.classList.add('btn-outline-dark');
+  pokeButton.classList.add('btn');
+  pokeButton.classList.add('btn-outline-dark')
+  pokeButton.classList.add('btn-active')
 
 //Calling the eventListenerButton function to add an event listener for button clicks.
   eventListenerButton(pokeButton, pokemon)
