@@ -6,6 +6,9 @@ let pokemonList= [];
 
 let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+
+
+
 //Code below manipulates DOM creating a new pokemon list for index.html
 //Selecting the class pokemonList from the ul in the index.
 function addListItem (pokemon){
@@ -21,7 +24,9 @@ function addListItem (pokemon){
   pokeButton.innerText = pokemon.name;
   pokeButton.classList.add('btn');
   pokeButton.classList.add('btn-outline-dark')
-  pokeButton.classList.add('btn-active')
+  pokeButton.classList.add('btn-active');
+  pokeButton.setAttribute('data-toggle', 'modal');
+  pokeButton.setAttribute('data-target', '#modal-container');
 
 //Calling the eventListenerButton function to add an event listener for button clicks.
   eventListenerButton(pokeButton, pokemon)
@@ -35,6 +40,9 @@ function addListItem (pokemon){
 //Adding the UL as the parent of the list.
   pokemonListScript.appendChild(listItem);
   }
+
+
+
 
 function eventListenerButton (pokeButton,pokemon){
     pokeButton.addEventListener('click',function(){showDetails(pokemon)})
