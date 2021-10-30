@@ -263,3 +263,52 @@ let examplePromise2 = new Promise (function(myResolve, myReject){
 console.log('waiting');
 examplePromise2.then(function(result){console.log(result)}) .catch(function(error){console.log(error);
 });
+
+//old modal Code
+
+/*let modalContainer = document.querySelector('#modal-container');
+function showModal(pokemon){
+  modalContainer.innerHtml = 'LOREM IPSUM';
+  let modal = document.createElement ('div');
+  modal.classList.add('modal');
+
+  let closeButtonElement = document.createElement('button');
+    closeButtonElement.innerText ='Close';
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.addEventListener ('click',hideModal)
+
+  let modalTitle = document.createElement ('h2');
+    modalTitle.innerText = 'Name: ' + pokemon.name;
+
+  let modalDetails = document.createElement ('h3');
+    modalDetails.innerText = 'height: '+ pokemon.height;
+
+  let pokemonImage = document.createElement ('img');
+      pokemonImage.src = pokemon.imageUrl;
+      pokemonImage.classList.add('pokemonImage');
+
+  modal.appendChild(closeButtonElement);
+  modal.appendChild(modalTitle);
+  modal.appendChild(modalDetails);
+  modal.appendChild(pokemonImage);
+  modalContainer.appendChild(modal);
+  modalContainer.classList.add('is-visible');
+}
+
+function hideModal(){
+modalContainer.classList.remove('is-visible')
+}
+window.addEventListener("keydown", e => {
+if (e.key === "Escape" && modalContainer.classList.contains('is-visible')) {
+ hideModal();
+}
+}); //Closing addEventListener
+
+modalContainer.addEventListener("click", e => {
+let target = e.target;
+if (target === modalContainer) {
+ hideModal();
+}
+});
+*/
+//Creating a function that calls the pokemonList.
