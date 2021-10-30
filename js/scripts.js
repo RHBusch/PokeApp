@@ -69,10 +69,10 @@ function loadList (){
       return response.json();
     }).then(function(details){   //The data the promise will return.
       item.imageUrlFront = details.sprites.front_default;
-    //  item.imageUrlBack = details.sprite.back_default;
       item.height = details.height;
       item.types = details.types;
       item.weight = details.weight;
+      item.habitat = details.habitat;
     }).catch(function(e){ // indicates what will happen if the promise is rejected
     console.error(e);
     });
@@ -86,29 +86,41 @@ function showModal(pokemon){
   let modalTitle = $('.modal-title');
   let modalBody = $('.modal-body');
 
-//*********Bugs w types + images
   modalTitle.empty();
   modalBody.empty();
 
   let nameElement =$('<h1>' + pokemon.name + '</h1>');
   let heightElement = $('<p>' +'Pokemon Height: ' + pokemon.height + '</p>');
   let weightElement = $('<p>' +'Pokemon Weight: ' + pokemon.weight + '</p>');
-  let typesElement = $('<p>' +'Pokemon Types: ' + pokemon.types + '</p>');
+//Creating array and calling types from API
+  let pokeTypesArray = [];
+  pokemon.types.forEach(pokemon => {
+    let types = pokemon.type.name;
+    pokeTypesArray.push(types)})
+    let typesString = pokeTypesArray.join(' & ');
+  let typesElement = (`Pokemon Type(s): ${typesString}`);
+//creating array and calling habitats from API
+/*  let pokeHabitatsArray = [];
+  pokemon.habitat.forEach(pokemon => {
+    let habitats = pokemon.habitat.name;
+    pokeHabitatsArray.push(habitats)})
+    let habitatsString = pokeHabitatsArray.join ( ' & ');
+    let habitatsElement = (`Where to find this pokemon: ${habitatsString}`);*/
+
+
+
   let imgElementFront = $('<img class =".modal-img" style="width:50%">');
   imgElementFront.attr('src', pokemon.imageUrlFront);
-  //let imgElementBack = $('<img class =".modal-img" style="width:50%">');
-//  imgElement.attr('src', pokemon.imageUrlBack_default);
-
-  /*let imgElementFront = $('img class =".modal-img" style="width:50%">');
-  imgElementFront.attr('src', pokemon.imageUrlFront);*/
+  console.log(pokemon.types);
 
   modalTitle.append(nameElement);
   modalBody.append(heightElement);
   modalBody.append(weightElement);
   modalBody.append(typesElement);
+  //modalBody.append(habitatsElement);
   modalBody.append(imgElementFront);
-}
 
+}
     /*let modalContainer = document.querySelector('#modal-container');
     function showModal(pokemon){
       modalContainer.innerHtml = 'LOREM IPSUM';
