@@ -68,7 +68,8 @@ function loadList (){
     return fetch(url).then(function(response){
       return response.json();
     }).then(function(details){   //The data the promise will return.
-      item.imageUrl = details.sprites.front_default;
+      item.imageUrlFront = details.sprites.front_default;
+    //  item.imageUrlBack = details.sprite.back_default;
       item.height = details.height;
       item.types = details.types;
       item.weight = details.weight;
@@ -93,8 +94,10 @@ function showModal(pokemon){
   let heightElement = $('<p>' +'Pokemon Height: ' + pokemon.height + '</p>');
   let weightElement = $('<p>' +'Pokemon Weight: ' + pokemon.weight + '</p>');
   let typesElement = $('<p>' +'Pokemon Types: ' + pokemon.types + '</p>');
-  let imgElement = $('<img class =".modal-img" style="width:50%">');
-  imgElement.attr('src', pokemon.imageUrl);
+  let imgElementFront = $('<img class =".modal-img" style="width:50%">');
+  imgElementFront.attr('src', pokemon.imageUrlFront);
+  //let imgElementBack = $('<img class =".modal-img" style="width:50%">');
+//  imgElement.attr('src', pokemon.imageUrlBack_default);
 
   /*let imgElementFront = $('img class =".modal-img" style="width:50%">');
   imgElementFront.attr('src', pokemon.imageUrlFront);*/
@@ -103,7 +106,7 @@ function showModal(pokemon){
   modalBody.append(heightElement);
   modalBody.append(weightElement);
   modalBody.append(typesElement);
-  modalBody.append(imgElement);
+  modalBody.append(imgElementFront);
 }
 
     /*let modalContainer = document.querySelector('#modal-container');
