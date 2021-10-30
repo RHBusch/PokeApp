@@ -71,6 +71,7 @@ function loadList (){
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      item.weight = details.weight;
     }).catch(function(e){ // indicates what will happen if the promise is rejected
     console.error(e);
     });
@@ -79,8 +80,34 @@ function loadList (){
 function showDetails (pokemon){
   loadDetails(pokemon).then(function(){showModal(pokemon)
   })};
+function showModal(pokemon){
+  let modalHeader = $('.modal-header');
+  let modalTitle = $('.modal-title');
+  let modalBody = $('.modal-body');
 
-    let modalContainer = document.querySelector('#modal-container');
+//*********Bugs w types + images
+  modalTitle.empty();
+  modalBody.empty();
+
+  let nameElement =$('<h1>' + pokemon.name + '</h1>');
+  let heightElement = $('<p>' +'Pokemon Height: ' + pokemon.height + '</p>');
+  let weightElement = $('<p>' +'Pokemon Weight: ' + pokemon.weight + '</p>');
+  let typesElement = $('<p>' +'Pokemon Types: ' + pokemon.types + '</p>');
+  /*let imgElement = $('img class =".modal-img" style="width:50%">');
+  imgElement.attr('src', pokemon.imageUrl);*/
+
+  /*let imgElementFront = $('img class =".modal-img" style="width:50%">');
+  imgElementFront.attr('src', pokemon.imageUrlFront);*/
+
+  modalTitle.append(nameElement);
+  modalBody.append(heightElement);
+  modalBody.append(weightElement);
+  modalBody.append(typesElement);
+
+//  modalBody.append(imgElementFront);
+}
+
+    /*let modalContainer = document.querySelector('#modal-container');
     function showModal(pokemon){
       modalContainer.innerHtml = 'LOREM IPSUM';
       let modal = document.createElement ('div');
@@ -124,7 +151,7 @@ window.addEventListener("keydown", e => {
      hideModal();
    }
  });
-
+*/
 //Creating a function that calls the pokemonList.
 function getAll() {return pokemonList};
 
