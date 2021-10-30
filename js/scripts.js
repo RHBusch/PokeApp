@@ -93,8 +93,8 @@ function showModal(pokemon){
   let heightElement = $('<p>' +'Pokemon Height: ' + pokemon.height + '</p>');
   let weightElement = $('<p>' +'Pokemon Weight: ' + pokemon.weight + '</p>');
   let typesElement = $('<p>' +'Pokemon Types: ' + pokemon.types + '</p>');
-  /*let imgElement = $('img class =".modal-img" style="width:50%">');
-  imgElement.attr('src', pokemon.imageUrl);*/
+  let imgElement = $('<img class =".modal-img" style="width:50%">');
+  imgElement.attr('src', pokemon.imageUrl);
 
   /*let imgElementFront = $('img class =".modal-img" style="width:50%">');
   imgElementFront.attr('src', pokemon.imageUrlFront);*/
@@ -103,8 +103,7 @@ function showModal(pokemon){
   modalBody.append(heightElement);
   modalBody.append(weightElement);
   modalBody.append(typesElement);
-
-//  modalBody.append(imgElementFront);
+  modalBody.append(imgElement);
 }
 
     /*let modalContainer = document.querySelector('#modal-container');
