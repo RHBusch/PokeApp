@@ -6,11 +6,21 @@ let pokemonList= [];
 
 let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-
-
-
 //Code below manipulates DOM creating a new pokemon list for index.html
 //Selecting the class pokemonList from the ul in the index.
+
+//Building search function
+let searchForm = document.querySelector('#searchForm');
+searchForm.addEventListener('keyup',(e) => {
+  let searchString = e.target.value;
+  let filteredPokemon = pokemonList.filter(character =>{
+    return character.name.includes(searchString)
+  })
+  console.log(filteredPokemon);
+  //showModal(filteredPokemon);
+  //showDetails(filteredPokemon);
+})
+
 function addListItem (pokemon){
   let pokemonListScript = document.querySelector('.pokemonList');
 
@@ -40,9 +50,6 @@ function addListItem (pokemon){
 //Adding the UL as the parent of the list.
   pokemonListScript.appendChild(listItem);
   }
-
-
-
 
 function eventListenerButton (pokeButton,pokemon){
     pokeButton.addEventListener('click',function(){showDetails(pokemon)})
@@ -98,7 +105,7 @@ function showModal(pokemon){
     let types = pokemon.type.name;
     pokeTypesArray.push(types)})
     let typesString = pokeTypesArray.join(' & ');
-  let typesElement = (`Pokemon Type(s): ${typesString}`);
+    let typesElement = (`Pokemon Type(s): ${typesString}`);
 //creating array and calling habitats from API
 /*  let pokeHabitatsArray = [];
   pokemon.habitat.forEach(pokemon => {
@@ -106,8 +113,6 @@ function showModal(pokemon){
     pokeHabitatsArray.push(habitats)})
     let habitatsString = pokeHabitatsArray.join ( ' & ');
     let habitatsElement = (`Where to find this pokemon: ${habitatsString}`);*/
-
-
 
   let imgElementFront = $('<img class =".modal-img" style="width:50%">');
   imgElementFront.attr('src', pokemon.imageUrlFront);
@@ -119,54 +124,8 @@ function showModal(pokemon){
   modalBody.append(typesElement);
   //modalBody.append(habitatsElement);
   modalBody.append(imgElementFront);
-
 }
-    /*let modalContainer = document.querySelector('#modal-container');
-    function showModal(pokemon){
-      modalContainer.innerHtml = 'LOREM IPSUM';
-      let modal = document.createElement ('div');
-      modal.classList.add('modal');
 
-      let closeButtonElement = document.createElement('button');
-        closeButtonElement.innerText ='Close';
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.addEventListener ('click',hideModal)
-
-      let modalTitle = document.createElement ('h2');
-        modalTitle.innerText = 'Name: ' + pokemon.name;
-
-      let modalDetails = document.createElement ('h3');
-        modalDetails.innerText = 'height: '+ pokemon.height;
-
-      let pokemonImage = document.createElement ('img');
-          pokemonImage.src = pokemon.imageUrl;
-          pokemonImage.classList.add('pokemonImage');
-
-      modal.appendChild(closeButtonElement);
-      modal.appendChild(modalTitle);
-      modal.appendChild(modalDetails);
-      modal.appendChild(pokemonImage);
-      modalContainer.appendChild(modal);
-      modalContainer.classList.add('is-visible');
-    }
-
-function hideModal(){
-    modalContainer.classList.remove('is-visible')
-}
-window.addEventListener("keydown", e => {
-   if (e.key === "Escape" && modalContainer.classList.contains('is-visible')) {
-     hideModal();
-   }
- }); //Closing addEventListener
-
- modalContainer.addEventListener("click", e => {
-   let target = e.target;
-   if (target === modalContainer) {
-     hideModal();
-   }
- });
-*/
-//Creating a function that calls the pokemonList.
 function getAll() {return pokemonList};
 
 //Creating a function that adds a new pokemon to the list only if the 'item' is an object
