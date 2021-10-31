@@ -21,18 +21,23 @@
 
 <!--- Starting my nav bar code --->
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between">
   <a class="navbar-brand" href="index.html">
     <img src ="img/poke_logo.svg" alt= "pokemon text logo" width= "100">
   </a>
+  <form class ="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Find a pokemon!</button>
+  </form>
 </nav>
+
   <br>
-  <h1> Pokemon Data Hub </h1>
+  <h3> Pokemon Data Hub </h3>
   <br>
   <div class="container">
     <div class="row">
       <div class="col-sm">
-        <h3><u>Check out these Pokemon!</u><br></h3>
+        <h4>Check out these Pokemon!<br></h4>
         <ul class = "list-group pokemonList"> </ul>
       </div>
     </div>
@@ -54,8 +59,6 @@
         <div class="pokemon-types"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
