@@ -19,7 +19,7 @@ let result = PokemonList.filter(pokemon =>{
   return pokemon.name.contains (searchString);
 })
 console.log(result);*/
-
+let searchForm = document.querySelector('#searchForm');
 searchForm.addEventListener('keyup',(e) => {
   let searchString = e.target.value;
   let filteredPokemon = pokemonList.filter(pokemon =>{
