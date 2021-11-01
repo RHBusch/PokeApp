@@ -6,21 +6,34 @@ let pokemonList= [];
 
 let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-//Code below manipulates DOM creating a new pokemon list for index.html
-//Selecting the class pokemonList from the ul in the index.
-
 //Building search function
-let searchForm = document.querySelector('#searchForm');
+/*let searchForm = document.querySelector('#searchForm');
+let filteredPokemon = document.querySelector('.pokemonList');*/
+
+/*let searchDetails = document.querySelector('#searchForm');
+searchDetails.addEventListener('keyup', (e) => {
+let pokemonList= [];
+let searchString = e.target.value;
+//let filteredPokemonList = Object.values('.pokemonList');
+let result = PokemonList.filter(pokemon =>{
+  return pokemon.name.contains (searchString);
+})
+console.log(result);*/
+
 searchForm.addEventListener('keyup',(e) => {
   let searchString = e.target.value;
-  let filteredPokemon = pokemonList.filter(character =>{
-    return character.name.includes(searchString)
+  let filteredPokemon = pokemonList.filter(pokemon =>{
+    return pokemon.name.includes(searchString);
+    let filteredPokemon = ('.pokemonList');
+    showModal(filteredPokemon);
   })
   console.log(filteredPokemon);
   //showModal(filteredPokemon);
   //showDetails(filteredPokemon);
 })
 
+//Code below manipulates DOM creating a new pokemon list for index.html
+//Selecting the class pokemonList from the ul in the index.
 function addListItem (pokemon){
   let pokemonListScript = document.querySelector('.pokemonList');
 
