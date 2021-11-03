@@ -6,31 +6,6 @@ let pokemonList= [];
 
 let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-//Building search function
-/*let searchForm = document.querySelector('#searchForm');
-let filteredPokemon = document.querySelector('.pokemonList');*/
-
-/*let searchDetails = document.querySelector('#searchForm');
-searchDetails.addEventListener('keyup', (e) => {
-let pokemonList= [];
-let searchString = e.target.value;
-//let filteredPokemonList = Object.values('.pokemonList');
-let result = PokemonList.filter(pokemon =>{
-  return pokemon.name.contains (searchString);
-})
-console.log(result);*/
-/*let searchForm = document.querySelector('#searchForm');
-searchForm.addEventListener('keyup',(e) => {
-  let searchString = e.target.value;
-  let filteredPokemon = pokemonList.filter(pokemon =>{
-    return pokemon.name.includes(searchString);
-    showModal(filteredPokemon);
-  })
-  console.log(filteredPokemon);
-  //showModal(filteredPokemon);
-  //showDetails(filteredPokemon);
-})*/
-
 //Code below manipulates DOM creating a new pokemon list for index.html
 //Selecting the class pokemonList from the ul in the index.
 function addListItem (pokemon){
@@ -140,6 +115,23 @@ function add(pokemonNewItem){
   console.log ('Can\'t add a non-object')
 }
 
+//Building search function
+let searchPokemon = document.querySelector('#searchForm');
+searchPokemon.addEventListener('input',() => {
+  let pokemonResults = document.querySelectorAll('.list-group-item');
+  let value = searchPokemon.value.toLowerCase();
+
+  pokemonResults.forEach(function(pokemon){
+    if (pokemon.innerText.toLowerCase().indexOf(value) > -1){
+      pokemon.style.display ='';
+    } else {pokemon.style.display= 'none';
+  }
+  }
+)
+
+
+})
+
   //Returning all relevant values for the functions above.
  return {
     getAll: getAll,
@@ -158,6 +150,3 @@ pokemonRepository.loadList().then (function(){
 pokemonRepository.getAll().forEach(function (pokemon) {
  pokemonRepository.addListItem(pokemon)});
   });
-
-/*  •	Node.js v16.13.0 to /usr/local/bin/node
-	•	npm v8.1.0 to /usr/local/bin/npm */
