@@ -166,7 +166,7 @@ bed time yet because although mood was originally set to sleepy and tirednessLev
 is set to above 8, I've assigned the ! operator making mood NOT sleepy. The statement
 is also and && so both conditions must be true.
 */
-}, 10);'
+//}, 10);
 let mood = !'sleepy';
 let tirednessLevel = 9;
 

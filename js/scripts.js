@@ -19,18 +19,17 @@ let result = PokemonList.filter(pokemon =>{
   return pokemon.name.contains (searchString);
 })
 console.log(result);*/
-let searchForm = document.querySelector('#searchForm');
+/*let searchForm = document.querySelector('#searchForm');
 searchForm.addEventListener('keyup',(e) => {
   let searchString = e.target.value;
   let filteredPokemon = pokemonList.filter(pokemon =>{
     return pokemon.name.includes(searchString);
-    let filteredPokemon = ('.pokemonList');
     showModal(filteredPokemon);
   })
   console.log(filteredPokemon);
   //showModal(filteredPokemon);
   //showDetails(filteredPokemon);
-})
+})*/
 
 //Code below manipulates DOM creating a new pokemon list for index.html
 //Selecting the class pokemonList from the ul in the index.
@@ -66,7 +65,7 @@ function addListItem (pokemon){
 
 function eventListenerButton (pokeButton,pokemon){
     pokeButton.addEventListener('click',function(){showDetails(pokemon)})
-    };
+    }
 
 function loadList (){
   return fetch(apiUrl).then(function(response){
@@ -100,9 +99,8 @@ function loadList (){
 
 function showDetails (pokemon){
   loadDetails(pokemon).then(function(){showModal(pokemon)
-  })};
+  })}
 function showModal(pokemon){
-  let modalHeader = $('.modal-header');
   let modalTitle = $('.modal-title');
   let modalBody = $('.modal-body');
 
@@ -119,13 +117,6 @@ function showModal(pokemon){
     pokeTypesArray.push(types)})
     let typesString = pokeTypesArray.join(' & ');
     let typesElement = (`Pokemon Type(s): ${typesString}`);
-//creating array and calling habitats from API
-/*  let pokeHabitatsArray = [];
-  pokemon.habitat.forEach(pokemon => {
-    let habitats = pokemon.habitat.name;
-    pokeHabitatsArray.push(habitats)})
-    let habitatsString = pokeHabitatsArray.join ( ' & ');
-    let habitatsElement = (`Where to find this pokemon: ${habitatsString}`);*/
 
   let imgElementFront = $('<img class =".modal-img" style="width:50%">');
   imgElementFront.attr('src', pokemon.imageUrlFront);
@@ -139,7 +130,7 @@ function showModal(pokemon){
   modalBody.append(imgElementFront);
 }
 
-function getAll() {return pokemonList};
+function getAll() {return pokemonList}
 
 //Creating a function that adds a new pokemon to the list only if the 'item' is an object
 function add(pokemonNewItem){
@@ -147,18 +138,7 @@ function add(pokemonNewItem){
   pokemonList.push(pokemonNewItem) :
 //If the item trying to be added above is not an object, the message below will log in the console.
   console.log ('Can\'t add a non-object')
-};
-
-/* A function designed to check if an item being added to the pokemon list has all the
-required keys. If it has all the keys the console will log the correct message */
-
-function checkKeys(pokemonNewItem){
-  if(Object.keys(pokemonNewItem).includes('name') &&
-  Object.keys(pokemonNewItem).includes('height') &&
-  Object.keys(pokemonNewItem).includes('types'))
-  {console.log('Okay to add - Pokemon has all included keys')}
-  else {console.log('Cannot add Pokemon- missing keys')}
-};
+}
 
   //Returning all relevant values for the functions above.
  return {
@@ -178,3 +158,6 @@ pokemonRepository.loadList().then (function(){
 pokemonRepository.getAll().forEach(function (pokemon) {
  pokemonRepository.addListItem(pokemon)});
   });
+
+/*  •	Node.js v16.13.0 to /usr/local/bin/node
+	•	npm v8.1.0 to /usr/local/bin/npm */
