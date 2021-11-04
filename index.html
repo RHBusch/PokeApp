@@ -17,11 +17,10 @@
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<div></div>
 <body>
 
 <!--- Starting my nav bar code --->
-
+<header>
 <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between"
 role = "navigation" aria-label = "main">
 
@@ -35,26 +34,21 @@ role = "navigation" aria-label = "main">
       <div class="sr-only">Click here to search for a pokemon.</div>
   </form>
 </nav>
-
-  <br>
-  <h3> Pokemon Data Hub </h3>
-  <br>
+</header>
+  <main class = "content">
   <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <h4>Check out these Pokemon!<br></h4>
+    <!--"list-group pokemonList"-->
         <div class="sr-only">The list below contains 150 pokemon.</div>
-        <ul class = "list-group pokemonList" id="searchPokemonList"></ul>
-      </div>
+        <ul class ="pokemonList unstyled-list row justify-content-center" ></ul>
     </div>
-  </div>
+
 
 <!--- Starting my modal code --->
 
 <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="pokemonModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header justify-content-center">
         <h5 class="modal-title" id="pokemonModal"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -69,6 +63,7 @@ role = "navigation" aria-label = "main">
     </div>
   </div>
 </div>
+</main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
