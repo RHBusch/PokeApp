@@ -22,6 +22,7 @@ function addListItem (pokemon){
   document.createElement('button');
   pokeButton.innerText = pokemon.name;
   pokeButton.classList.add('btn');
+  pokeButton.classList.add('btn-block');
   pokeButton.classList.add('btn-outline-dark')
   pokeButton.classList.add('btn-active');
   pokeButton.setAttribute('data-toggle', 'modal');
