@@ -13,7 +13,9 @@ function addListItem (pokemon){
 
 //Creating a list item as part of the unordered list selected above.
   let listItem = document.createElement('li');
-  listItem.classList.add('list-group-item');//Using JS to add this Bootstrap class
+  listItem.classList.add('list-group-item','col-xl-3',
+      'col-lg-4',
+      'col-md-6');//Using JS to add this Bootstrap class
 
 //Creating a button for each list item and assigning that button the innerText of the pokemon name.
   let pokeButton =
