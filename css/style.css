@@ -41,10 +41,15 @@ body{
   display: block;
   text-align: center;
   }
-  .modal-header .close {
-      position: relative;
-      bottom: 4.0rem;
+.modal-header .close {
+  position: relative;
+  bottom: 4.0rem;
   }
+.modal-body{
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+}
 
 .modal-footer{
   background-color: #ffd633;
