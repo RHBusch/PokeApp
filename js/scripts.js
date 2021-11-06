@@ -21,6 +21,7 @@ function addListItem (pokemon){
   let pokeButton =
   document.createElement('button');
   pokeButton.innerText = pokemon.name;
+  pokeButton.classList.add('customButton');
   pokeButton.classList.add('btn');
   pokeButton.classList.add('btn-block');
   pokeButton.classList.add('btn-outline-dark')
@@ -131,7 +132,6 @@ searchPokemon.addEventListener('input',() => {
   }
   }
 )
-
 
 })
 
