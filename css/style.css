@@ -29,3 +29,7 @@ body{
 .customButton{
   text-transform: capitalize;
 }
+
+.customModalTitle{
+  text-transform: capitalize;
+}
