@@ -1,5 +1,6 @@
 body{
-  background-color: #bfff80;
+  background-color: #99ff33
+;
   color: #000;
   font-family: 'Electrolize',sans-serif;
   font-weight:400;
@@ -9,7 +10,7 @@ body{
 }
 
 .btn{
-  background-color: #ffb3b3;
+  background-color: #FF383F;
 }
 
 .list-group-item{
@@ -23,4 +24,8 @@ body{
 
 .navbar-collapse {
   justify-content: inherit;
+}
+
+.customButton{
+  text-transform: capitalize;
 }
