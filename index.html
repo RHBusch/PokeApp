@@ -21,17 +21,16 @@
 
 <!--- Starting my nav bar code --->
 <header>
-<nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between"
+<nav class="navbar navbar-expand-sm justify-content-between fixed-top"
 role = "navigation" aria-label = "main">
 
   <a class="navbar-brand" href="index.html">
-    <img src ="img/poke_logo.svg" alt= "A yellow pokemon text logo in bold font." width= "100">
+    <img src ="img/poke_logo.svg" alt= "A yellow pokemon text logo in bold font." width= "250">
   </a>
 
   <form class ="form-inline">
-    <input id="searchForm" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-info my-2 my-sm-0" role="button" type="submit" id="searchButton">Find a pokemon!</button>
-      <div class="sr-only">Click here to search for a pokemon.</div>
+    <input id="searchForm" class="form-control mr-md-2" type="search" placeholder="Type here to search!" aria-label="Search">
+      <div class="sr-only">Type here to search for a pokemon.</div>
   </form>
 </nav>
 </header>
@@ -48,7 +47,7 @@ role = "navigation" aria-label = "main">
 <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="pokemonModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header justify-content-center">
+      <div class="modal-header">
         <h5 class="modal-title" id="pokemonModal"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
