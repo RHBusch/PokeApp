@@ -38,7 +38,13 @@ body{
 
 .modal-header{
   background-color: #ccffff;
-}
+  display: block;
+  text-align: center;
+  }
+  .modal-header .close {
+      position: relative;
+      bottom: 4.0rem;
+  }
 
 .modal-footer{
   background-color: #ffd633;
