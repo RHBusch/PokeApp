@@ -98,9 +98,10 @@ function showModal(pokemon){
     let typesString = pokeTypesArray.join(' & ');
     let typesElement = (`Pokemon Type(s): ${typesString}`);
 
-  let imgElementFront = $('<img class =".modal-img" style="width:50%">');
+  let imgElementFront = $('<img>');
+  $(imgElementFront).addClass('modalImgSize');
   imgElementFront.attr('src', pokemon.imageUrlFront);
-  console.log(pokemon.types);
+
 
   modalTitle.append(nameElement);
   modalBody.append(heightElement);
