@@ -87,6 +87,7 @@ function showModal(pokemon){
   modalBody.empty();
 
   let nameElement =$('<h1>' + pokemon.name + '</h1>');
+  $(nameElement).addClass('customModalTitle');
   let heightElement = $('<p>' +'Pokemon Height: ' + pokemon.height + '</p>');
   let weightElement = $('<p>' +'Pokemon Weight: ' + pokemon.weight + '</p>');
 //Creating array and calling types from API
