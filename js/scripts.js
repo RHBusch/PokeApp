@@ -66,7 +66,7 @@ function loadList (){
     return fetch(url).then(function(response){
       return response.json();
     }).then(function(details){   //The data the promise will return.
-      item.imageUrlFront = details.sprites.front_default;
+      item.imageUrlFront = details.sprites.other.home.front_default;
       item.height = details.height;
       item.types = details.types;
       item.weight = details.weight;
