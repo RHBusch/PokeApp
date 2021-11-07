@@ -155,3 +155,23 @@ pokemonRepository.loadList().then (function(){
 pokemonRepository.getAll().forEach(function (pokemon) {
  pokemonRepository.addListItem(pokemon)});
   });
+
+//Creating a scroll up button for pokemon
+
+let caretBtn = document.getElementById('btn-top');
+
+window.onscroll = function (){
+  scrollFunction()}
+
+  function scrollFunction(){
+    if(document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20)
+    {caretBtn.style.display = 'block';}
+    else{caretBtn.style.display = 'none';}
+  }
+
+    caretBtn.addEventListener('click', backToTop);
+      function backToTop(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+}
