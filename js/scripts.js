@@ -4,6 +4,7 @@ let pokemonRepository = (function() {
 //Creating array of Pokemon to iterate over
 let pokemonList= [];
 
+//Drawing from the following api
 let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 //Code below manipulates DOM creating a new pokemon list for index.html
@@ -15,9 +16,9 @@ function addListItem (pokemon){
   let listItem = document.createElement('li');
   listItem.classList.add('list-group-item','col-xl-3',
       'col-lg-4',
-      'col-md-6');//Using JS to add this Bootstrap class
+      'col-md-6');//Using JS to add this Bootstrap class and breakpoints.
 
-//Creating a button for each list item and assigning that button the innerText of the pokemon name.
+//Creating a button for each list item and assigning that button the innerText of the pokemon name w/relevant classes.
   let pokeButton =
   document.createElement('button');
   pokeButton.innerText = pokemon.name;
@@ -32,9 +33,6 @@ function addListItem (pokemon){
 //Calling the eventListenerButton function to add an event listener for button clicks.
   eventListenerButton(pokeButton, pokemon)
 
-//Creating a CSS class for the button referenced above to add styling.
-//  pokeButton.classList.add('my-poke-button');
-
 //Adding the ListItem as the parent of the pokeButton.
   listItem.appendChild(pokeButton);
 
@@ -42,6 +40,7 @@ function addListItem (pokemon){
   pokemonListScript.appendChild(listItem);
   }
 
+//When the button is clicked run the showDetails function, loadList w/relevant content.
 function eventListenerButton (pokeButton,pokemon){
     pokeButton.addEventListener('click',function(){showDetails(pokemon)})
     }
@@ -67,6 +66,7 @@ function loadList (){
       return response.json();
     }).then(function(details){   //The data the promise will return.
       item.imageUrlFront = details.sprites.other.home.front_default;
+      //item.imageUrlFront = details.sprites.versions.generation_v.black_white.animated.front;
       item.height = details.height;
       item.types = details.types;
       item.weight = details.weight;
@@ -75,7 +75,7 @@ function loadList (){
     console.error(e);
     });
   }
-
+//Creating a function to show the relevant details within the bootstrap modal.
 function showDetails (pokemon){
   loadDetails(pokemon).then(function(){showModal(pokemon)
   })}
@@ -157,9 +157,9 @@ pokemonRepository.getAll().forEach(function (pokemon) {
   });
 
 //Creating a scroll up button for pokemon
-
 let caretBtn = document.getElementById('btn-top');
 
+//Only displaying the scroll up button once viewer scrolls down a bit.
 window.onscroll = function (){
   scrollFunction()}
 
@@ -169,7 +169,7 @@ window.onscroll = function (){
     {caretBtn.style.display = 'block';}
     else{caretBtn.style.display = 'none';}
   }
-
+//Sending viewer back to the top of the screen. 
     caretBtn.addEventListener('click', backToTop);
       function backToTop(){
         document.body.scrollTop = 0;
