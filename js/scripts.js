@@ -88,8 +88,8 @@ function showModal(pokemon){
 
   let nameElement =$('<h1>' + pokemon.name + '</h1>');
   $(nameElement).addClass('customModalTitle');
-  let heightElement = $('<p>' +'Pokemon Height: ' + pokemon.height + '</p>');
-  let weightElement = $('<p>' +'Pokemon Weight: ' + pokemon.weight + '</p>');
+  let heightElement = $('<p>' +'Pokemon Height: ' + pokemon.height + ' .ft' + '</p>');
+  let weightElement = $('<p>' +'Pokemon Weight: ' + pokemon.weight + ' .lbs' + '</p>');
 //Creating array and calling types from API
   let pokeTypesArray = [];
   pokemon.types.forEach(pokemon => {
@@ -169,7 +169,7 @@ window.onscroll = function (){
     {caretBtn.style.display = 'block';}
     else{caretBtn.style.display = 'none';}
   }
-//Sending viewer back to the top of the screen. 
+//Sending viewer back to the top of the screen.
     caretBtn.addEventListener('click', backToTop);
       function backToTop(){
         document.body.scrollTop = 0;
