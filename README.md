@@ -1,21 +1,19 @@
 # PokeApp
 
-Objective: 
- Create an interactive list of data with additional data available on demand. Data should be sourced from a public API. 
+Check out this JS / jquery powered app where users can select pokemon pulled from the PokeApi. Of the 150 pokemon listed, each has its own respective modal with details such as height, weight, type(s), and a high-quailty image. 
 
-Technical Features: 
+## Languages and Frameworks: 
 
-The app will load data from an external API; for instance, the Pokémon API.
+* JS 
+* jquery 
+* HTML5
+* CSS 
+* Bootstrap
 
-The app will display a list of items loaded from that API after the page is loaded.
+## Highlighted Features: 
 
-The app will  enable the viewing of more details for a given list item (like a Pokémon) on
-demand, such as when clicking on a list item.
-
-The app will have CSS styling.
-
-The JavaScript code will  be formatted according to ESLint rules. --- May be formatted via Prettier or manually formatted. 
-
-The app will  use at least one additional complex UI pattern, such as a modal, for details or
-touch interactions --- the app may allow searching for items (pokemon)
+* API data pull (150 pokemon) 
+* Modal interaction w/pokemon details
+* Caret button displayed only after scrolling begins
+* Search filter
 
