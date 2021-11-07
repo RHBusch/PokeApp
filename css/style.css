@@ -60,6 +60,9 @@ body{
 
 .modal-footer{
   background-color: #ffd633;
+  display:flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 #btn-top {
