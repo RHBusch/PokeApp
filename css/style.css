@@ -53,11 +53,21 @@ body{
 }
 
 .modalImgSize{
-  height:300px;
-  width: 300px;
+  height:250px;
+  width: 250px;
   align-self:center;
 }
 
 .modal-footer{
   background-color: #ffd633;
+}
+
+#btn-top {
+	position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #ffd633;
+    border: none;
+    border-radius: 50%;
+    display:none;
 }
