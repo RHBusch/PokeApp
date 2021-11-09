@@ -266,7 +266,7 @@ examplePromise2.then(function(result){console.log(result)}) .catch(function(erro
 
 //old modal Code
 
-/*let modalContainer = document.querySelector('#modal-container');
+let modalContainer = document.querySelector('#modal-container');
 function showModal(pokemon){
   modalContainer.innerHtml = 'LOREM IPSUM';
   let modal = document.createElement ('div');
@@ -310,5 +310,3 @@ if (target === modalContainer) {
  hideModal();
 }
 });
-*/
-//Creating a function that calls the pokemonList.
