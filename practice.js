@@ -1,37 +1,42 @@
+
+/*
+These are practice elements, just for fun, 
+and represented some areas I was working on at the time to improve my JS abilities.
+I should probably remove this to clean up the code, but also like having notes here... 
+*/
+
 //An add function: this should add two numbers (parameters) and return the sum.
 
-function add (number1, number2)
-{return(number1 + number2)}
-let result1 = add(3,4)
+function add(number1, number2) { return (number1 + number2) }
+let result1 = add(3, 4)
 console.log(result1)
 
 //A subtract function: this should subtract the second number from the first number and return the difference.
 
-function subtract(number1, number2)
-{return(number1 - number2)}
-let result2= subtract(100,50)
+function subtract(number1, number2) { return (number1 - number2) }
+let result2 = subtract(100, 50)
 console.log(result2)
 
 //A multiply function: this should multiply two numbers and return the product.
 
-function multiply(number1, number2, number3)
-{return(number1*number2*number3)}
-let result3 = multiply(25,3,6)
+function multiply(number1, number2, number3) { return (number1 * number2 * number3) }
+let result3 = multiply(25, 3, 6)
 console.log(result3)
 
 //A divide function: this should divide the first number by the second number and return the quotient; however, if the divisor is equal to zero, the function should return the text “Not Allowed.”
 
-function divide(number1, number2)
-{if(number2 === 0){return "not allowed"}
-else{return number1/number2}}
-let result4 = divide(10,5)
+function divide(number1, number2) {
+  if (number2 === 0) { return "not allowed" }
+  else { return number1 / number2 }
+}
+let result4 = divide(10, 5)
 console.log(result4)
 
 //practice forEach loop
 
-let array2= ['dog','cat','turkey'];
+let array2 = ['dog', 'cat', 'turkey'];
 
-array2.forEach(function(item,index,array){
+array2.forEach(function (item, index, array) {
   console.log('Item: ' + item + ' at index: ' + index + ' in the array: ' + array);
 })
 
@@ -53,34 +58,39 @@ foodList.forEach(function (currentItem) {
 
 
 
-let pokemonRepository = (function() {
+let pokemonRepository = (function () {
 
-let pokemonList=[
-{name:'Dewgong',
- height: 1.7,
- types:['ice','water']
-},
+  let pokemonList = [
+    {
+      name: 'Dewgong',
+      height: 1.7,
+      types: ['ice', 'water']
+    },
 
-{name:'Hitmonlee',
- height:1.5,
- types:['fighting']
-},
+    {
+      name: 'Hitmonlee',
+      height: 1.5,
+      types: ['fighting']
+    },
 
-{name:'Goldeen',
- height:0.6,
- types:['water']
-},
+    {
+      name: 'Goldeen',
+      height: 0.6,
+      types: ['water']
+    },
 
-{name:'Hypno',
- height:1.6,
- types:['psychic']
-}
-];
+    {
+      name: 'Hypno',
+      height: 1.6,
+      types: ['psychic']
+    }
+  ];
 
-function getAll() {return pokemonList};
-function add(pokemonNew){pokemonList.push(pokemonNew);
-}
- return {
+  function getAll() { return pokemonList };
+  function add(pokemonNew) {
+    pokemonList.push(pokemonNew);
+  }
+  return {
     getAll: getAll,
     add: add
   };
@@ -92,33 +102,35 @@ The code below will scan the array for all items less than the
 length of the array (5 items) starting at 0. */
 
 
-for(let i=0; i < pokemonRepository.getAll(); i++){
+for (let i = 0; i < pokemonRepository.getAll(); i++) {
 
-//Assigning variables for my template literal
-   let pokemonName = pokemonList[i].name;
-   let pokemonHeight = pokemonList[i].height;
-/*Creating a conditional variable for my template literal heightText and psychic text willd depend on the if statements that follow */
+  //Assigning variables for my template literal
+  let pokemonName = pokemonList[i].name;
+  let pokemonHeight = pokemonList[i].height;
+  /*Creating a conditional variable for my template literal heightText and psychic text willd depend on the if statements that follow */
 
-   let heightText;
-     if(pokemonHeight > 1.6){heightText= '- EARTH TREMBLES, that\'s a big pokemon!'};
-   let pokemonTypes = pokemonList[i].types;
-   let psychicText;
-     if(pokemonTypes == 'psychic'){psychicText = '- psychic pokemon are very rare!'};
+  let heightText;
+  if (pokemonHeight > 1.6) { heightText = '- EARTH TREMBLES, that\'s a big pokemon!' };
+  let pokemonTypes = pokemonList[i].types;
+  let psychicText;
+  if (pokemonTypes == 'psychic') { psychicText = '- psychic pokemon are very rare!' };
 
-//template literal
-     {document.write(`Pokemon Name: ${pokemonName}
+  //template literal
+  {
+    document.write(`Pokemon Name: ${pokemonName}
      <br> Height: ${pokemonHeight}
      ${heightText || ''}
      <br> Type(s): ${pokemonTypes} ${psychicText || ''}<br><br>
      `)
-     }
-     }
+  }
+}
 
 //Using a foreach loop to iterate over my pokemonList2 array 10/07/21
 
-pokemonRepository.getAll.forEach()(function(getPokemonData)
-{console.log('Name: ' + getPokemonData.name + ', Height: ' + getPokemonData.height
-+ ', Type(s): ' + getPokemonData.types)})
+pokemonRepository.getAll.forEach()(function (getPokemonData) {
+  console.log('Name: ' + getPokemonData.name + ', Height: ' + getPokemonData.height
+    + ', Type(s): ' + getPokemonData.types)
+})
 
 
 
@@ -130,11 +142,11 @@ let kelvin = 298
 // celsius is 273 degrees less than kelvin
 let celsius = kelvin - 273
 // running fahrenheit conversion and using the Math.floor object to round down for any decimals
-let fahrenheit = Math.floor(celsius*(9/5) + 32)
+let fahrenheit = Math.floor(celsius * (9 / 5) + 32)
 //Adding newton conversion
-let newton = Math.floor(celsius*(33/100))
+let newton = Math.floor(celsius * (33 / 100))
 
-let fahrenheit = Math.floor(celsius*(9/5) + 32)
+let fahrenheit = Math.floor(celsius * (9 / 5) + 32)
 
 console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
 
@@ -148,7 +160,7 @@ let earlyYears = 2;
 
 earlyYears *= 10.5;
 //Accounting for early years already
-laterYears = myAge-=2;
+laterYears = myAge -= 2;
 
 laterYears *= 4;
 
@@ -156,7 +168,7 @@ let myAgeInDogYears = laterYears + earlyYears
 
 console.log(myAgeInDogYears);
 
-let myName ='Ross Busch' .toLowerCase();
+let myName = 'Ross Busch'.toLowerCase();
 
 console.log(`My name is ${myName}
 I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`)
@@ -170,9 +182,10 @@ is also and && so both conditions must be true.
 let mood = !'sleepy';
 let tirednessLevel = 9;
 
-if(mood === 'sleepy' && tirednessLevel > 8){
-  console.log('time to sleep');}
-else{console.log('not bed time yet');}
+if (mood === 'sleepy' && tirednessLevel > 8) {
+  console.log('time to sleep');
+}
+else { console.log('not bed time yet'); }
 
 /*  Studying short-ciruit evaluation. If I assign a value to tool, console.log will
 print that value to the console because a || returns the first truthy value. If I leave
@@ -194,98 +207,99 @@ conditional ? action if truthy : action if falsy
 let isLocked = false;
 
 isLocked ?
-  console.log('You will need a key to open the door.'):
+  console.log('You will need a key to open the door.') :
   console.log('You will not need a key to open the door.');
 
 
 let isCorrect = true;
 
-isCorrect? console.log('Correct!') :
+isCorrect ? console.log('Correct!') :
 
   console.log('Incorrect!');
 
 
 let favoritePhrase = 'Love That!';
 
-favoritePhrase === 'Love That!'?
+favoritePhrase === 'Love That!' ?
   console.log('I love that!') :
   console.log("I don't love that!");
 
-  // Practicing else if
-  let season = 'summer';
+// Practicing else if
+let season = 'summer';
 
-if (season === 'spring'){
+if (season === 'spring') {
   console.log('It\'s spring! The tress are budding!')
-  } else if(season === 'winter'){
-    console.log('It\'s winter! Everything is covered in snow.')
-    } else if (season === 'fall'){
-      console.log('It\'s fall! Leaves are falling!');
-    } else if (season === 'summer'){
-      console.log('It\'s sunny and warm because it\'s summer!')
-    }
-    {
-      console.log('Invalid season.');
-    }
+} else if (season === 'winter') {
+  console.log('It\'s winter! Everything is covered in snow.')
+} else if (season === 'fall') {
+  console.log('It\'s fall! Leaves are falling!');
+} else if (season === 'summer') {
+  console.log('It\'s sunny and warm because it\'s summer!')
+}
+{
+  console.log('Invalid season.');
+}
 //Practicing using switch
 let athleteFinalPosition = 'first place';
-switch (athleteFinalPosition){
+switch (athleteFinalPosition) {
 
-case 'first place' :
-  console.log('You get the gold medal!');
-  break;
-case 'second place' :
-  console.log('You get the silver medal!')
-  break;
-case 'third place' :
-  console.log('You get the bronze medal!')
-  break;
-default:
-  console.log ('No medal awarded.')
-  break;
+  case 'first place':
+    console.log('You get the gold medal!');
+    break;
+  case 'second place':
+    console.log('You get the silver medal!')
+    break;
+  case 'third place':
+    console.log('You get the bronze medal!')
+    break;
+  default:
+    console.log('No medal awarded.')
+    break;
 }
 
 //Practicing asynchronous Code
 
-let examplePromise2 = new Promise (function(myResolve, myReject){
+let examplePromise2 = new Promise(function (myResolve, myReject) {
 
   let sum;
-  setTimeout(function(){
-    sum = 3*9;
-    if(sum > 27){
+  setTimeout(function () {
+    sum = 3 * 9;
+    if (sum > 27) {
       myResolve(sum);
     }
-      else{
-        myReject('The promise is nae good');
-      }
-    },2000);
+    else {
+      myReject('The promise is nae good');
+    }
+  }, 2000);
 });
 
 console.log('waiting');
-examplePromise2.then(function(result){console.log(result)}) .catch(function(error){console.log(error);
+examplePromise2.then(function (result) { console.log(result) }).catch(function (error) {
+  console.log(error);
 });
 
 //old modal Code
 
 let modalContainer = document.querySelector('#modal-container');
-function showModal(pokemon){
+function showModal(pokemon) {
   modalContainer.innerHtml = 'LOREM IPSUM';
-  let modal = document.createElement ('div');
+  let modal = document.createElement('div');
   modal.classList.add('modal');
 
   let closeButtonElement = document.createElement('button');
-    closeButtonElement.innerText ='Close';
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.addEventListener ('click',hideModal)
+  closeButtonElement.innerText = 'Close';
+  closeButtonElement.classList.add('modal-close');
+  closeButtonElement.addEventListener('click', hideModal)
 
-  let modalTitle = document.createElement ('h2');
-    modalTitle.innerText = 'Name: ' + pokemon.name;
+  let modalTitle = document.createElement('h2');
+  modalTitle.innerText = 'Name: ' + pokemon.name;
 
-  let modalDetails = document.createElement ('h3');
-    modalDetails.innerText = 'height: '+ pokemon.height;
+  let modalDetails = document.createElement('h3');
+  modalDetails.innerText = 'height: ' + pokemon.height;
 
-  let pokemonImage = document.createElement ('img');
-      pokemonImage.src = pokemon.imageUrl;
-      pokemonImage.classList.add('pokemonImage');
+  let pokemonImage = document.createElement('img');
+  pokemonImage.src = pokemon.imageUrl;
+  pokemonImage.classList.add('pokemonImage');
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(modalTitle);
@@ -295,18 +309,18 @@ function showModal(pokemon){
   modalContainer.classList.add('is-visible');
 }
 
-function hideModal(){
-modalContainer.classList.remove('is-visible')
+function hideModal() {
+  modalContainer.classList.remove('is-visible')
 }
 window.addEventListener("keydown", e => {
-if (e.key === "Escape" && modalContainer.classList.contains('is-visible')) {
- hideModal();
-}
+  if (e.key === "Escape" && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
 }); //Closing addEventListener
 
 modalContainer.addEventListener("click", e => {
-let target = e.target;
-if (target === modalContainer) {
- hideModal();
-}
+  let target = e.target;
+  if (target === modalContainer) {
+    hideModal();
+  }
 });
